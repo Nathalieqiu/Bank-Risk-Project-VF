@@ -73,5 +73,9 @@ def save_report(
         ws.add_image(XLImage(str(pd_plot)), "A1")
         ws.add_image(XLImage(str(ead_plot)), "A35")
         ws.add_image(XLImage(str(wl_plot)), "A70")
+        
+        rating_plot = fig_dir / "clients_by_rating.png"
+        ws["A105"] = "Number of Clients by Rating"
+        ws.add_image(XLImage(str(rating_plot)), "A105")
 
     logger.info("Rapport sauvegardé : %s", path)

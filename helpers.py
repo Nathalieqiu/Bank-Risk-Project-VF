@@ -201,5 +201,14 @@ def generate_figures(
     plt.tight_layout()
     plt.savefig(fig_dir / "watchlist_by_sector.png")
     plt.close()
+    
+    plt.figure()
+    sns.countplot(data=df, x="rating", order=["AAA", "AA", "A", "BBB", "BB", "B"])
+    plt.title("Number of Clients by Rating")
+    plt.xlabel("Rating")
+    plt.ylabel("Number of Clients")
+    plt.tight_layout()
+    plt.savefig(fig_dir / "clients_by_rating.png")
+    plt.close()
 
     logger.info("Graphiques générés dans %s", fig_dir)
