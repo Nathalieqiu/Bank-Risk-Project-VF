@@ -1,0 +1,23 @@
+{
+    "paths": {
+        "input_excel": "data/raw/bank_database.xlsx",
+        "output_excel": "data/raw/bank_risk_report.xlsx",
+        "figures_dir": "data/raw/figures_tmp"
+    },
+    "generation": {
+        "n_clients": 10000,
+        "seed": 42,
+        "countries": ["France", "Germany", "Italy", "Spain", "Belgium", "Netherlands"],
+        "sectors": ["Industry", "Services", "Retail", "Energy", "Tech", "RealEstate"],
+        "ratings": ["AAA", "AA", "A", "BBB", "BB", "B"],
+        "rating_probabilities": [0.03, 0.07, 0.20, 0.35, 0.25, 0.10]
+    },
+    "thresholds": {
+        "pd_watchlist": 0.03,
+        "basel_cet1_min": 0.045,
+        "basel_tier1_total": 0.08,
+        "basel_cet1_buffer": 0.105,
+        "rw_proxy": 1.0,
+        "cet1_rate_proxy": 0.12
+    }
+}
