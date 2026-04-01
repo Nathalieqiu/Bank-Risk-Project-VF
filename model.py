@@ -26,3 +26,4 @@ class Collateral:
 
     client_id: str
     collateral_value: float
+

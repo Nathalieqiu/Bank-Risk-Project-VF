@@ -214,3 +214,4 @@ def generate_figures(
     plt.close()
 
     logger.info("Graphiques générés dans %s", fig_dir)
+

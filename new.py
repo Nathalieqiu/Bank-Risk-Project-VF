@@ -74,3 +74,5 @@ def generate_data(config: dict, output_path: str) -> None:
         len(collaterals),
         path,
     )
+    
+    

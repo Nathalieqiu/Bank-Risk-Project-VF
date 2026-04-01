@@ -8,6 +8,8 @@ from helpers import (
 from logger import get_logger
 from repository import load_data, save_report
 
+from view import display_summary, display_kpi_country, display_kpi_sector
+
 logger = get_logger(__name__)
 
 
@@ -46,5 +48,10 @@ def run(config: dict) -> None:
         summary=summary,
         figures_dir=paths["figures_dir"],
     )
+    
+    display_summary(summary)
+    display_kpi_country(kpi_country)
+    display_kpi_sector(kpi_sector)
 
     logger.info("=== Analyse terminée ===")
+

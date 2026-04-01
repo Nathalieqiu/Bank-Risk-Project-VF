@@ -79,3 +79,5 @@ def save_report(
         ws.add_image(XLImage(str(rating_plot)), "A105")
 
     logger.info("Rapport sauvegardé : %s", path)
+
+
