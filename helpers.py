@@ -80,6 +80,7 @@ def compute_indicators(df: pd.DataFrame, thresholds: dict) -> pd.DataFrame:
     basel_105 = thresholds["basel_cet1_buffer"]
 
     df["expected_loss"] = df["ead"] * df["pd"] * df["lgd"]
+    df["loan_to_ead_ratio"] = df["loan_amount"] / df["ead"]
     df["watchlist_flag"] = (df["pd"] > pd_wl).astype(int)
     df["collateral_coverage"] = np.where(
         df["ead"] > 0, df["total_collateral"] / df["ead"], 0.0
@@ -109,6 +110,7 @@ def compute_kpis(
         "total_el": ("expected_loss", "sum"),
         "watchlist_rate": ("watchlist_flag", "mean"),
         "avg_collateral_coverage": ("collateral_coverage", "mean"),
+        "avg_loan_to_ead": ("loan_to_ead_ratio", "mean"),
     }
 
     kpi_country = (
