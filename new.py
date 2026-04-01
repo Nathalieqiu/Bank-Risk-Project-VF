@@ -26,6 +26,7 @@ def generate_data(config: dict, output_path: str) -> None:
     clients["country"] = rng.choice(countries, size=n_clients)
     clients["sector"] = rng.choice(sectors, size=n_clients)
     clients["rating"] = rng.choice(ratings, size=n_clients, p=rating_probs)
+    clients["age"] = rng.integers(18, 80, size=n_clients)
 
     # Table exposures
     ead = rng.lognormal(mean=12.0, sigma=0.8, size=n_clients)

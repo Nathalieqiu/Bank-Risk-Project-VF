@@ -8,6 +8,7 @@ class Client:
     country: str
     sector: str
     rating: str
+    age : int
 
 
 @dataclass()
